@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+.app-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.parking-lot-table {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.parking-lot-operate input,
+.parking-lot-operate select {
+  margin-right: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.parking-lot-group {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.parking-lot {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 150px;
+}
+.parking-cars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+.parking-slot {
+  border: 1px dashed #aaa;
+  height: 50px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
 }

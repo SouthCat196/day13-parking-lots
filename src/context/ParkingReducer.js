@@ -11,12 +11,25 @@ export const parkingReducer = (state, action) => {
         ...state,
         parkingLots: state.parkingLots.map(lot =>
           lot.id === action.payload.parkingLot
-            ? { ...lot, tickets: [...lot.tickets, { plateNumber: action.payload.plateNumber, position: action.payload.position }] }
+            ? {
+              ...lot,
+              tickets: [...lot.tickets, {plateNumber: action.payload.plateNumber, position: action.payload.position}]
+            }
             : lot
         )
       };
     case 'FETCH_CAR':
-      return {...state, parkingLots: state.parkingLots.filter(lot => lot.plateNumber !== action.payload.plateNumber)};
+      return {
+        ...state,
+        parkingLots: state.parkingLots.map(lot =>
+          lot.tickets.some(ticket => ticket.plateNumber === action.payload.car.plateNumber)
+            ? {
+              ...lot,
+              tickets: lot.tickets.filter(ticket => ticket.plateNumber !== action.payload.car.plateNumber)
+            }
+            : lot
+        )
+      };
     default:
       return state;
   }

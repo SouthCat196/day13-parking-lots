@@ -1,0 +1,28 @@
+.parking-lot-operate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.parking-lot-operate-container .ant-input,
+.parking-lot-operate-container .ant-select,
+.parking-lot-operate-container .ant-btn {
+  margin-right: 8px;
+}
+
+.parking-lot-operate-container .ant-btn {
+  background-color: #1890ff;
+  color: #fff;
+  border: none;
+}
+
+.parking-lot-operate-container .ant-btn:hover {
+  background-color: #40a9ff;
+  color: #fff;
+}

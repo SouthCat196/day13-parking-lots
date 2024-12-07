@@ -29,7 +29,7 @@ const ParkingLotOperate = () => {
       const response = await postParking({plateNumber}, strategy);
       dispatch({type: 'PARK_CAR', payload: response});
     } catch (error) {
-      console.error('Error parking the car:', error);
+      message.error('Error parking the car: ' + error.response.data);
     }
   };
 

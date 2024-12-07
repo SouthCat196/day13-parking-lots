@@ -37,7 +37,7 @@ const ParkingLotOperate = () => {
     if (!validatePlateNumber()) return;
     try {
       const response = await postFetch({plateNumber});
-      message.success(`Car with plate number ${response.car.plateNumber} has been parked for ${response.parkingDuration} minutes.`);
+      message.success(`Car with plate number ${response.car.plateNumber} has been parked for ${response.parkingDuration} minutes. Parking fee: $${response.parkingFee}.`);
       dispatch({type: 'FETCH_CAR', payload: response});
     } catch (error) {
       console.error('Error fetching the car:', error);
